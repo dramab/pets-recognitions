@@ -31,8 +31,8 @@ def sing_predictor(img,model_path):
     res_cls = results[0].names[pre_idx] 
 
     #加载数据集中的中英文名称
-    cn_name = read_txt(r'class_cn.txt')
-    en_name = read_txt(r'class.txt')
+    cn_name = read_txt(r'all_cls_cn.txt')
+    en_name = read_txt(r'all_cls_en.txt')
 
     #清洗标签
     cn_name = lt_strip(cn_name)
@@ -42,7 +42,7 @@ def sing_predictor(img,model_path):
 
 
 if __name__ == '__main__':
-    img = r'E:\py_code\pets-recognitions\test_pic\未知动物.jpg'
+    img = r'E:\py_code\pets-recognitions\test_pic\柯基.png'
     model_path = r'E:\py_code\pets-recognitions\runs\classify\train13\weights\best.pt'
     print(sing_predictor(img,model_path))
 
